@@ -1,13 +1,15 @@
 const express = require("express");
+const path = require("path");
 
 const app = express();
-const port = 8080;
+const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World! vs meou");
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "./index.html"));
 });
+
 app.get("/about", (req, res) => {
-  res.send(`I'm Eric!`);
+  res.send(`I'm MeoU!`);
 });
 
 app.listen(port, () => {
